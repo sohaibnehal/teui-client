@@ -34,7 +34,7 @@ export class TEUIChartComponent implements OnInit, OnChanges {
       backgroundColor: []
     }
   ];
-  private options: any = {
+  public options: any = {
     tooltips: { enabled: false }
   };
   showOuterChart = false;
