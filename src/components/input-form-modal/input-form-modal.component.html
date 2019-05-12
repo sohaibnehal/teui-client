@@ -1,0 +1,845 @@
+<div role="document" class="modal-dialog">
+  <div class="modal-content">
+    <div class="modal-body">
+      <div class="form-area text-left border-dotted p-4">
+        <form [formGroup]="form" (ngSubmit)="submit()" (change)="submit()">
+          <!-- Item 1 -->
+          <div class="form-group w-50 mb-4">
+            <label for="email">1. Your email:</label>
+            <input
+              type="text"
+              class="form-control"
+              name="email"
+              id="email"
+              formControlName="email"
+              placeholder="myname@myemailcom"
+            />
+          </div>
+          <!-- Item 2 -->
+          <div class="form-group w-50 mb-4">
+            <label for="id">2. Your ID:</label>
+            <input
+              type="text"
+              class="form-control"
+              name="id"
+              id="id"
+              formControlName="id"
+              placeholder="007 Bond"
+            />
+          </div>
+          <!-- Item 3 -->
+          <div class="form-group w-50 mb-4">
+            <label for="project-number">3. Project Number:</label>
+            <input
+              type="text"
+              class="form-control"
+              name="projectNumber"
+              id="projectNumber"
+              formControlName="projectNumber"
+              placeholder="12345678"
+            />
+          </div>
+          <!-- Item 4 -->
+          <div class="form-group w-70 mb-4">
+            <label for="area"
+              >4. What is the total conditioned area of your building?</label
+            >
+            <div class="form-row">
+              <div class="col-auto mr-5">
+                <div class="form-inline">
+                  <div class="form-group">
+                    <input
+                      type="number"
+                      class="form-control"
+                      name="totalAreaFt"
+                      id="totalAreaFt"
+                      formControlName="totalAreaFt"
+                      (change)="convert('areaftToM', $event)"
+                      placeholder="2,000 ft&#178;"
+                    />
+                    <small class="ml-2">
+                      ft&#178;
+                    </small>
+                  </div>
+                </div>
+              </div>
+              <div class="col-auto">
+                <div class="form-inline">
+                  <div class="form-group">
+                    <input
+                      type="number"
+                      class="form-control"
+                      name="totalAreaM"
+                      id="totalAreaM"
+                      formControlName="totalAreaM"
+                      (change)="convert('areaMtoFt', $event)"
+                      placeholder="185.81 m&#178;"
+                    />
+                    <small class="ml-2">
+                      m&#178;
+                    </small>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Item 5 -->
+          <div class="form-group w-50 mb-4">
+            <label for="occupants">5. How many occupants?:</label>
+            <input
+              type="number"
+              class="form-control"
+              name="occupants"
+              id="occupants"
+              formControlName="occupants"
+              placeholder="0-1000"
+            />
+          </div>
+          <!-- Item 6 -->
+          <div class="form-group w-100 mb-4">
+            <label for="electricity">
+              <a
+                data-toggle="collapse"
+                href="#monthly-electricity"
+                role="button"
+                aria-expanded="false"
+                aria-controls="collapseExample"
+                class="text-body font-weight-bold"
+                >+
+              </a>
+              6. Enter your monthly Electricity use here (kWh):</label
+            >
+            <div class="collapse mb-2" id="monthly-electricity">
+              <div class="row ">
+                <div class="col-1 pr-0">
+                  <input
+                    type="number"
+                    class="form-control"
+                    id="occupants"
+                    aria-describedby="emailHelp"
+                    placeholder="Jan"
+                  />
+                </div>
+                <div class="col-1 pr-0">
+                  <input
+                    type="number"
+                    class="form-control"
+                    id="occupants"
+                    aria-describedby="emailHelp"
+                    placeholder="Feb"
+                  />
+                </div>
+                <div class="col-1 pr-0">
+                  <input
+                    type="number"
+                    class="form-control"
+                    id="occupants"
+                    aria-describedby="emailHelp"
+                    placeholder="Mar"
+                  />
+                </div>
+                <div class="col-1 pr-0">
+                  <input
+                    type="number"
+                    class="form-control"
+                    id="occupants"
+                    aria-describedby="emailHelp"
+                    placeholder="Apr"
+                  />
+                </div>
+                <div class="col-1 pr-0">
+                  <input
+                    type="number"
+                    class="form-control"
+                    id="occupants"
+                    aria-describedby="emailHelp"
+                    placeholder="May"
+                  />
+                </div>
+                <div class="col-1 pr-0">
+                  <input
+                    type="number"
+                    class="form-control"
+                    id="occupants"
+                    aria-describedby="emailHelp"
+                    placeholder="Jun"
+                  />
+                </div>
+                <div class="col-1 pr-0">
+                  <input
+                    type="number"
+                    class="form-control"
+                    id="occupants"
+                    aria-describedby="emailHelp"
+                    placeholder="Jul"
+                  />
+                </div>
+                <div class="col-1 pr-0">
+                  <input
+                    type="number"
+                    class="form-control"
+                    id="occupants"
+                    aria-describedby="emailHelp"
+                    placeholder="Aug"
+                  />
+                </div>
+                <div class="col-1 pr-0">
+                  <input
+                    type="number"
+                    class="form-control"
+                    id="occupants"
+                    aria-describedby="emailHelp"
+                    placeholder="Sep"
+                  />
+                </div>
+                <div class="col-1 pr-0">
+                  <input
+                    type="number"
+                    class="form-control"
+                    id="occupants"
+                    aria-describedby="emailHelp"
+                    placeholder="Oct"
+                  />
+                </div>
+                <div class="col-1 pr-0">
+                  <input
+                    type="number"
+                    class="form-control"
+                    id="occupants"
+                    aria-describedby="emailHelp"
+                    placeholder="Nov"
+                  />
+                </div>
+                <div class="col-1 pr-0 pl-1">
+                  <input
+                    type="number"
+                    class="form-control"
+                    id="occupants"
+                    aria-describedby="emailHelp"
+                    placeholder="Dec"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="form-inline">
+              <div class="form-group">
+                <input
+                  type="number"
+                  class="form-control"
+                  name="yearlyElectricity"
+                  id="yearlyElectricity"
+                  formControlName="yearlyElectricity"
+                  placeholder="0"
+                />
+                <small id="passwordHelpInline" class="ml-2">
+                  kWh Total/yr
+                </small>
+              </div>
+            </div>
+          </div>
+          <!-- Item 7 -->
+          <div class="form-group w-70 mb-4">
+            <label for="gas">
+              <a
+                data-toggle="collapse"
+                href="#monthly-gas"
+                role="button"
+                aria-expanded="false"
+                aria-controls="collapseExample"
+                class="text-body font-weight-bold"
+                >+
+              </a>
+              7. Enter your monthly Gas/Propane use here (m&#179;):</label
+            >
+            <div class="collapse mb-2" id="monthly-gas">
+              <div class="row ">
+                <div class="col-1 pr-0">
+                  <input
+                    type="number"
+                    class="form-control"
+                    id="occupants"
+                    aria-describedby="emailHelp"
+                    placeholder="Jan"
+                  />
+                </div>
+                <div class="col-1 pr-0">
+                  <input
+                    type="number"
+                    class="form-control"
+                    id="occupants"
+                    aria-describedby="emailHelp"
+                    placeholder="Feb"
+                  />
+                </div>
+                <div class="col-1 pr-0">
+                  <input
+                    type="number"
+                    class="form-control"
+                    id="occupants"
+                    aria-describedby="emailHelp"
+                    placeholder="Mar"
+                  />
+                </div>
+                <div class="col-1 pr-0">
+                  <input
+                    type="number"
+                    class="form-control"
+                    id="occupants"
+                    aria-describedby="emailHelp"
+                    placeholder="Apr"
+                  />
+                </div>
+                <div class="col-1 pr-0">
+                  <input
+                    type="number"
+                    class="form-control"
+                    id="occupants"
+                    aria-describedby="emailHelp"
+                    placeholder="May"
+                  />
+                </div>
+                <div class="col-1 pr-0">
+                  <input
+                    type="number"
+                    class="form-control"
+                    id="occupants"
+                    aria-describedby="emailHelp"
+                    placeholder="Jun"
+                  />
+                </div>
+                <div class="col-1 pr-0">
+                  <input
+                    type="number"
+                    class="form-control"
+                    id="occupants"
+                    aria-describedby="emailHelp"
+                    placeholder="Jul"
+                  />
+                </div>
+                <div class="col-1 pr-0">
+                  <input
+                    type="number"
+                    class="form-control"
+                    id="occupants"
+                    aria-describedby="emailHelp"
+                    placeholder="Aug"
+                  />
+                </div>
+                <div class="col-1 pr-0">
+                  <input
+                    type="number"
+                    class="form-control"
+                    id="occupants"
+                    aria-describedby="emailHelp"
+                    placeholder="Sep"
+                  />
+                </div>
+                <div class="col-1 pr-0">
+                  <input
+                    type="number"
+                    class="form-control"
+                    id="occupants"
+                    aria-describedby="emailHelp"
+                    placeholder="Oct"
+                  />
+                </div>
+                <div class="col-1 pr-0">
+                  <input
+                    type="number"
+                    class="form-control"
+                    id="occupants"
+                    aria-describedby="emailHelp"
+                    placeholder="Nov"
+                  />
+                </div>
+                <div class="col-1 pr-0 pl-1">
+                  <input
+                    type="number"
+                    class="form-control"
+                    id="occupants"
+                    aria-describedby="emailHelp"
+                    placeholder="Dec"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="col-auto mr-5">
+                <div class="form-inline">
+                  <div class="form-group">
+                    <input
+                      type="number"
+                      class="form-control"
+                      name="gasInM"
+                      id="gasInM"
+                      formControlName="gasInM"
+                      (change)="convert('gasMtoKWh', $event)"
+                      placeholder="0"
+                    />
+                    <small class="ml-2">
+                      m&#179; Total/yr
+                    </small>
+                  </div>
+                </div>
+              </div>
+              <div class="col-auto">
+                <div class="form-inline">
+                  <div class="form-group">
+                    <input
+                      type="number"
+                      class="form-control"
+                      name="gasInKWh"
+                      id="gasInKWh"
+                      formControlName="gasInKWh"
+                      (change)="convert('gasKWhToM', $event)"
+                      placeholder="0"
+                    />
+                    <small class="ml-2">
+                      m&#179; converted to kWh
+                    </small>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Item 8 -->
+          <div class="form-group w-70 mb-4">
+            <label for="area"
+              ><a
+                data-toggle="collapse"
+                href="#monthly-oil"
+                role="button"
+                aria-expanded="false"
+                aria-controls="collapseExample"
+                class="text-body font-weight-bold"
+                >+ </a
+              >8. Enter any Heating Oil Used here (litres):</label
+            >
+            <div class="collapse mb-2" id="monthly-oil">
+              <div class="row ">
+                <div class="col-1 pr-0">
+                  <input
+                    type="number"
+                    class="form-control"
+                    id="occupants"
+                    aria-describedby="emailHelp"
+                    placeholder="Jan"
+                  />
+                </div>
+                <div class="col-1 pr-0">
+                  <input
+                    type="number"
+                    class="form-control"
+                    id="occupants"
+                    aria-describedby="emailHelp"
+                    placeholder="Feb"
+                  />
+                </div>
+                <div class="col-1 pr-0">
+                  <input
+                    type="number"
+                    class="form-control"
+                    id="occupants"
+                    aria-describedby="emailHelp"
+                    placeholder="Mar"
+                  />
+                </div>
+                <div class="col-1 pr-0">
+                  <input
+                    type="number"
+                    class="form-control"
+                    id="occupants"
+                    aria-describedby="emailHelp"
+                    placeholder="Apr"
+                  />
+                </div>
+                <div class="col-1 pr-0">
+                  <input
+                    type="number"
+                    class="form-control"
+                    id="occupants"
+                    aria-describedby="emailHelp"
+                    placeholder="May"
+                  />
+                </div>
+                <div class="col-1 pr-0">
+                  <input
+                    type="number"
+                    class="form-control"
+                    id="occupants"
+                    aria-describedby="emailHelp"
+                    placeholder="Jun"
+                  />
+                </div>
+                <div class="col-1 pr-0">
+                  <input
+                    type="number"
+                    class="form-control"
+                    id="occupants"
+                    aria-describedby="emailHelp"
+                    placeholder="Jul"
+                  />
+                </div>
+                <div class="col-1 pr-0">
+                  <input
+                    type="number"
+                    class="form-control"
+                    id="occupants"
+                    aria-describedby="emailHelp"
+                    placeholder="Aug"
+                  />
+                </div>
+                <div class="col-1 pr-0">
+                  <input
+                    type="number"
+                    class="form-control"
+                    id="occupants"
+                    aria-describedby="emailHelp"
+                    placeholder="Sep"
+                  />
+                </div>
+                <div class="col-1 pr-0">
+                  <input
+                    type="number"
+                    class="form-control"
+                    id="occupants"
+                    aria-describedby="emailHelp"
+                    placeholder="Oct"
+                  />
+                </div>
+                <div class="col-1 pr-0">
+                  <input
+                    type="number"
+                    class="form-control"
+                    id="occupants"
+                    aria-describedby="emailHelp"
+                    placeholder="Nov"
+                  />
+                </div>
+                <div class="col-1 pr-0 pl-1">
+                  <input
+                    type="number"
+                    class="form-control"
+                    id="occupants"
+                    aria-describedby="emailHelp"
+                    placeholder="Dec"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="col-auto mr-5">
+                <div class="form-inline">
+                  <div class="form-group">
+                    <input
+                      type="number"
+                      class="form-control"
+                      name="oilInLt"
+                      id="oilInLt"
+                      formControlName="oilInLt"
+                      (change)="convert('oilLtToKWh', $event)"
+                      placeholder="0"
+                    />
+                    <small class="ml-2">
+                      lit Total/yr
+                    </small>
+                  </div>
+                </div>
+              </div>
+              <div class="col-auto">
+                <div class="form-inline">
+                  <div class="form-group">
+                    <input
+                      type="number"
+                      class="form-control"
+                      name="oilInKWh"
+                      id="oilInKWh"
+                      formControlName="oilInKWh"
+                      (change)="convert('oilKWhToLt', $event)"
+                      placeholder="0"
+                    />
+                    <small class="ml-2">
+                      lit oil conv. to kWh
+                    </small>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Item 9 -->
+          <div class="form-group w-70 mb-4">
+            <label for="area"
+              ><a
+                data-toggle="collapse"
+                href="#monthly-wood"
+                role="button"
+                aria-expanded="false"
+                aria-controls="collapseExample"
+                class="text-body font-weight-bold"
+                >+ </a
+              >9. Enter any Biofuel/Wood Used here (m&#179;):</label
+            >
+            <div class="collapse mb-2" id="monthly-biofuel">
+              <div class="row ">
+                <div class="col-1 pr-0">
+                  <input
+                    type="number"
+                    class="form-control"
+                    id="occupants"
+                    aria-describedby="emailHelp"
+                    placeholder="Jan"
+                  />
+                </div>
+                <div class="col-1 pr-0">
+                  <input
+                    type="number"
+                    class="form-control"
+                    id="occupants"
+                    aria-describedby="emailHelp"
+                    placeholder="Feb"
+                  />
+                </div>
+                <div class="col-1 pr-0">
+                  <input
+                    type="number"
+                    class="form-control"
+                    id="occupants"
+                    aria-describedby="emailHelp"
+                    placeholder="Mar"
+                  />
+                </div>
+                <div class="col-1 pr-0">
+                  <input
+                    type="number"
+                    class="form-control"
+                    id="occupants"
+                    aria-describedby="emailHelp"
+                    placeholder="Apr"
+                  />
+                </div>
+                <div class="col-1 pr-0">
+                  <input
+                    type="number"
+                    class="form-control"
+                    id="occupants"
+                    aria-describedby="emailHelp"
+                    placeholder="May"
+                  />
+                </div>
+                <div class="col-1 pr-0">
+                  <input
+                    type="number"
+                    class="form-control"
+                    id="occupants"
+                    aria-describedby="emailHelp"
+                    placeholder="Jun"
+                  />
+                </div>
+                <div class="col-1 pr-0">
+                  <input
+                    type="number"
+                    class="form-control"
+                    id="occupants"
+                    aria-describedby="emailHelp"
+                    placeholder="Jul"
+                  />
+                </div>
+                <div class="col-1 pr-0">
+                  <input
+                    type="number"
+                    class="form-control"
+                    id="occupants"
+                    aria-describedby="emailHelp"
+                    placeholder="Aug"
+                  />
+                </div>
+                <div class="col-1 pr-0">
+                  <input
+                    type="number"
+                    class="form-control"
+                    id="occupants"
+                    aria-describedby="emailHelp"
+                    placeholder="Sep"
+                  />
+                </div>
+                <div class="col-1 pr-0">
+                  <input
+                    type="number"
+                    class="form-control"
+                    id="occupants"
+                    aria-describedby="emailHelp"
+                    placeholder="Oct"
+                  />
+                </div>
+                <div class="col-1 pr-0">
+                  <input
+                    type="number"
+                    class="form-control"
+                    id="occupants"
+                    aria-describedby="emailHelp"
+                    placeholder="Nov"
+                  />
+                </div>
+                <div class="col-1 pr-0 pl-1">
+                  <input
+                    type="number"
+                    class="form-control"
+                    id="occupants"
+                    aria-describedby="emailHelp"
+                    placeholder="Dec"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="col-auto mr-5">
+                <div class="form-inline">
+                  <div class="form-group">
+                    <input
+                      type="number"
+                      class="form-control"
+                      name="woodInM"
+                      id="woodInM"
+                      formControlName="woodInM"
+                      (change)="convert('woodMToKWh', $event)"
+                      placeholder="0"
+                    />
+                    <small class="ml-2">
+                      m&#179; Total/yr
+                    </small>
+                  </div>
+                </div>
+              </div>
+              <div class="col-auto">
+                <div class="form-inline">
+                  <div class="form-group">
+                    <input
+                      type="number"
+                      class="form-control"
+                      name="woodInkWh"
+                      id="woodInkWh"
+                      formControlName="woodInkWh"
+                      (change)="convert('woodKWhToM', $event)"
+                      placeholder="0"
+                    />
+                    <small class="ml-2">
+                      m&#179; converted to kWh
+                    </small>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Item 10 -->
+          <div class="form-group w-50 mb-4">
+            <label for="onSiteRenewableElectricity"
+              >10. Enter On-Site Renewable Contributions Here
+              (Solar/Wind):</label
+            >
+            <div class="form-inline">
+              <div class="form-group">
+                <input
+                  type="number"
+                  class="form-control"
+                  id="onSiteRenewableElectricity"
+                  formControlName="onSiteRenewableElectricity"
+                  placeholder="0"
+                />
+                <small id="passwordHelpInline" class="ml-2">
+                  kWh Total/yr
+                </small>
+              </div>
+            </div>
+          </div>
+          <!-- Item 11 -->
+          <div class="form-group w-70 mb-4">
+            <label for="area">11. Enter Evaluation Period</label>
+            <div class="form-row">
+              <div class="col-auto">
+                <div class="form-inline">
+                  <div class="form-group">
+                    <p class="mr-2 mt-3">From:</p>
+                    <input
+                      type="date"
+                      class="form-control"
+                      id="evaluationFromDate"
+                      formControlName="evaluationFromDate"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div class="col-auto">
+                <div class="form-inline">
+                  <div class="form-group">
+                    <p class="mr-2 mt-3">To:</p>
+                    <input
+                      type="date"
+                      class="form-control"
+                      id="evaluationToDate"
+                      formControlName="evaluationToDate"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Item 12 -->
+          <div class="form-group w-80 mb-4">
+            <label for="occupants"
+              >12. Are you using off-site renewable energy?</label
+            >
+            <div class="form-inline">
+              <label
+                class="form-check-label mr-2"
+                for="hasOffsiteRenewableElectricity"
+                >Renewable Electricity:</label
+              >
+              <input
+                type="checkbox"
+                name="hasOffsiteRenewableElectricity"
+                class="form-check-input"
+                id="hasOffsiteRenewableElectricity"
+                formControlName="hasOffsiteRenewableElectricity"
+              />
+              <label
+                class="form-check-label ml-5 mr-2"
+                for="hasOffsiteRenewableNaturalGas"
+                >Green Natural Gas:</label
+              >
+              <input
+                type="checkbox"
+                name="hasOffsiteRenewableNaturalGas"
+                class="form-check-input"
+                id="hasOffsiteRenewableNaturalGas"
+                formControlName="hasOffsiteRenewableNaturalGas"
+              />
+            </div>
+          </div>
+          <!-- Info Sources -->
+          <app-info-sources> </app-info-sources>
+          <!-- Buttons -->
+          <div class="row text-center">
+            <div class="col-6 p-4">
+              <button
+                type="button"
+                (click)="onPrintForm()"
+                class="btn btn-dark btn-block mr-2"
+              >
+                PRINT FORM
+              </button>
+            </div>
+            <div class="col-6 p-4">
+              <button
+                type="button"
+                (click)="onEmailForm()"
+                class="btn btn-dark btn-block ml-2"
+              >
+                EMAIL FORM
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

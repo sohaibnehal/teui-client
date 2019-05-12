@@ -1,0 +1,25 @@
+<div>
+  <div id="chart" class="chart-container">
+    <div style="display: block">
+      <canvas
+        baseChart
+        [data]="outerDoughnutChartData"
+        [labels]="outerDoughnutChartLabels"
+        [chartType]="outerDoughnutChartType"
+        [colors]="outerChartColors"
+        [options]="options"
+        *ngIf="showOuterChart"
+      >
+      </canvas>
+      <canvas
+        baseChart
+        [data]="innerDoughnutChartData"
+        [labels]="innerDoughnutChartLabels"
+        [chartType]="innerDoughnutChartType"
+        [colors]="innerChartColors"
+        [options]="options"
+      >
+      </canvas>
+    </div>
+  </div>
+</div>

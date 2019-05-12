@@ -1,0 +1,20 @@
+.modal-dialog {
+  margin-top: 1rem !important;
+  margin-bottom: 1rem !important;
+  width: 90% !important;
+  max-width: 90% !important;
+  .modal-content {
+    border: none;
+    .modal-header {
+      border: none;
+    }
+    .modal-body {
+      border: none;
+    }
+  }
+}
+.collapse-icon {
+  width: 25px;
+  margin-bottom: 30px;
+  margin-left: 25px;
+}

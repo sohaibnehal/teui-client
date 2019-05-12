@@ -1,0 +1,30 @@
+<div>
+  <div class="container text-center mt-5 mb-5">
+    <h1 class="mb-3">THE TEUI PROJECT</h1>
+    <p class="text-left mb-3">
+      Canada committed to meet the Paris climate targets, but most individuals
+      (even architects) are in the dark about the performance of their own
+      house. As the TEUI rating is just starting to gain traction in the AEC
+      parlance, we have aimed to make this data visually obvious with simple
+      input from a year’s worth of your energy bills – first step is to see,
+      only then to act. This handy calculator that lets you determine the energy
+      performance of your home or building in the units of the most widely used
+      Building Energy energy metric, the TEUI or Total Energy Use Intensity. The
+      units are the amount of all energy sources in Kilowatt Hours (kWh)
+      required as a function of building area in square metres (m3) per year:
+      kWh/m2/yr. Simply fill in the fields to the best of your knowledge below
+      and the calculator converts all of the units for you. Conversion
+      references are provided in the footnotes below. Happy crunching! This
+      project was initiated by the SBEC of the OAA, Summer 2019. Please feel
+      free to leave comments and feedback in the field below. Beta testing of
+      this site to begin May 15th, 2019.
+    </p>
+  </div>
+  <div class="row mb-5">
+    <div class="col-2"></div>
+    <div class="col-8">
+      <app-results [result]="result" (openModal)="openModal()"></app-results>
+    </div>
+    <div class="col-2"></div>
+  </div>
+</div>

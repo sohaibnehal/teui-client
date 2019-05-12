@@ -1,0 +1,47 @@
+<div class="form-areaborder-dotted p-4">
+  <div class="col text-right">
+    <button
+      (click)="onOpenModal()"
+      type="button"
+      class="btn btn-success rounded-circle text-right"
+    >
+      <i class="fas fa-plus"></i>
+    </button>
+  </div>
+  <h3 class="mb-3 text-center">{{ result?.teui | number }}</h3>
+
+  <!-- <app-teui-bar-chart [result]="result"></app-teui-bar-chart> -->
+  <h2 class="mb-3 text-center">TEUI RATING</h2>
+  <app-teui-chart [result]="result"></app-teui-chart>
+  <div id="stats1" class="mt-5 mb-5 text-center ">
+    <h3>C02e FOOTPRINT = {{ result?.totalCO2 | number }} MT</h3>
+    <h4>Canadian Average 6.35MT CO2e</h4>
+    <h4>Canadian 2030 Target 1.00 MT CO2e</h4>
+    <h4>Canadian 2050 Target 0.00 MT CO2e</h4>
+  </div>
+  <div id="stats2" class="text-center">
+    <h5>
+      Area & Utility Data collected:
+      <span class="font-weight-bold">
+        {{ result?.dataCollectedOn | date: 'longDate' }}
+      </span>
+    </h5>
+    <h5>
+      Evaluation Period:
+      <span class="font-weight-bold"
+        >{{ result?.evaluationFromDate | date: 'longDate' }} -
+        {{ result?.evaluationToDate | date: 'longDate' }}</span
+      >
+    </h5>
+    <h5>
+      Project No.
+      <span class="font-weight-bold">{{ result?.projectNumber || 'N/a' }}</span>
+      Gross Area:
+      <span class="font-weight-bold">{{ result?.projectArea }}m&#178;</span>
+    </h5>
+    <h5>
+      Evaluated by:
+      <span class="font-weight-bold">Example Architect, Inc.</span>
+    </h5>
+  </div>
+</div>
