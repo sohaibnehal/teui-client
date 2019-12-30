@@ -1,0 +1,62 @@
+.stop-left {
+    stop-color: green; 
+}
+
+.stop-center {
+    stop-color: yellow; 
+}
+
+.stop-right {
+    stop-color:red; 
+}
+
+.filled {
+    fill: url(#mainGradient);
+}
+
+.position__element__arrow{
+    position:relative;
+    left: 1.8vw;
+}
+@media screen and (max-width: 900px) {
+    .position__element__arrow{
+        left: 6.3vw;
+        top:2px;
+        position: relative;
+    }
+}
+
+.position__element__line{
+    position:absolute;left:18.9vw;top:32%;
+}
+
+@media screen and (max-width: 399px){
+    .position__element__line{
+        position:absolute;
+        left:1.5vw;
+        top:32%
+    }
+}
+
+
+@media screen and (min-width:400px)and (max-width: 600px){
+    .position__element__line{
+        position:absolute;
+        left:5vw;
+        top:32%
+    }
+}
+
+
+.gradient-background{
+    background: rgb(0,255,0);
+    background: linear-gradient(90deg, rgba(0,255,0,1) 0%, rgba(255,255,0,1) 50%, rgba(255,0,0,1) 100%);
+    background: -webkit-linear-gradient(90deg, rgba(0,255,0,1) 0%, rgba(255,255,0,1) 50%, rgba(255,0,0,1) 100%);
+    background:    -moz-linear-gradient(90deg, rgba(0,255,0,1) 0%, rgba(255,255,0,1) 50%, rgba(255,0,0,1) 100%);
+    background:     -ms-linear-gradient(90deg, rgba(0,255,0,1) 0%, rgba(255,255,0,1) 50%, rgba(255,0,0,1) 100%);
+    background:      -o-linear-gradient(90deg, rgba(0,255,0,1) 0%, rgba(255,255,0,1) 50%, rgba(255,0,0,1) 100%);
+}
+
+
+
+

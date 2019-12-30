@@ -1,11 +1,14 @@
 /* You can add global styles to this file, and also import other style files */
 h1 {
-  font-size: 5rem !important;
+  font-size: 6rem !important;
 }
 h2 {
-  font-size: 3rem !important;
+  font-size: 5rem !important;
 }
 h3 {
+  font-size: 3rem !important;
+}
+h4 {
   font-size: 2rem !important;
 }
 .btn-dark {
@@ -17,4 +20,13 @@ h3 {
 .border-dotted {
   border-style: dotted !important;
   border-color: #ced4da;
+}
+.opacity-60 {
+  opacity: 0.75;
+}
+.opacity-50 {
+  opacity: 0.5;
+}
+.opacity-30 {
+  opacity: 0.4;
 }

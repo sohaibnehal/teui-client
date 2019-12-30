@@ -3,3 +3,21 @@
   margin-bottom: 30px;
   margin-left: 25px;
 }
+.center-text{
+  position: absolute;
+  top: 28vh;
+  bottom: 0px;
+  right: 0px;
+  left: 17.7vw;
+}
+@media screen and (max-width: 800px) {
+  .center-text{
+    display: none;
+  }
+}
+chart-legend {
+  position: absolute;
+  top: 50%;
+  right: 0%;
+  transform: translateY(-50%);
+}

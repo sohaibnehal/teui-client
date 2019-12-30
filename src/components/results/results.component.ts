@@ -7,7 +7,6 @@ import {
   EventEmitter,
   ChangeDetectionStrategy
 } from '@angular/core';
-import { Observable, Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-results',
@@ -23,8 +22,4 @@ export class ResultsComponent implements OnInit, OnChanges {
 
   ngOnChanges() {}
   ngOnInit() {}
-
-  onOpenModal() {
-    this.openModal.emit();
-  }
 }

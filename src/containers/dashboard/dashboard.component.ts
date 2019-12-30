@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { InputFormModalComponent } from '../../components';
 import { AverageData, ConversionFactors } from '../../data';
@@ -25,7 +25,10 @@ export class DashboardComponent implements OnInit {
 
   openModal() {
     const modalRef = this.modalService.open(InputFormModalComponent, {
-      size: 'lg'
+      size: 'lg',beforeDismiss: async ()=>{
+        modalRef.componentInstance.leave.next(true);
+        return delay(500, true)
+      }
     });
     modalRef.componentInstance.formData = this.formData;
     modalRef.componentInstance.collectFormData.subscribe((data: any) => {
@@ -134,4 +137,10 @@ export class DashboardComponent implements OnInit {
       oilKWhM2;
     this.result = { ...data, totalCO2, teui, chartData };
   }
+}
+
+function delay(t, v: true) {
+  return new Promise<true>(function(resolve) { 
+      setTimeout(resolve.bind(null, v), t)
+  });
 }

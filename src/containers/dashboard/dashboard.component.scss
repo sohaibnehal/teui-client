@@ -1,0 +1,29 @@
+.heading-1 {
+  font-weight: 700;
+}
+.paragraph-1 {
+  font-weight: 500;
+}
+.drawer-button{
+  position: fixed;
+  left: 0;
+  z-index: 999999;
+  top:48%;
+}
+
+.no-border{
+  border-top-left-radius: 0px;
+  border-bottom-left-radius: 0px;
+}
+
+h1 {
+  font-family: 'Great Vibes', cursive;
+  font-size: 5em;
+  white-space:normal;
+  word-break: break-all;
+  color: grey;
+  text-shadow: -1px -1px 0px rgba(255, 255, 255, 0.3), 1px 1px 0px 
+  rgba(0, 0, 0, 0.8);
+  text-align:center;
+  width:100%;
+  }

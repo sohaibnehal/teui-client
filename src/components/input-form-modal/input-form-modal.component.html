@@ -1,11 +1,11 @@
-<div role="document" class="modal-dialog">
-  <div class="modal-content">
-    <div class="modal-body">
+<!-- <div role="document" class="modal-dialog"> -->
+  <!-- <div class="modal-content"> -->
+    <div [class]="classes(leave | async)" >
       <div class="form-area text-left border-dotted p-4">
         <form [formGroup]="form" (ngSubmit)="submit()" (change)="submit()">
           <!-- Item 1 -->
           <div class="form-group w-50 mb-4">
-            <label for="email">1. Your email:</label>
+            <label for="email">1. Your email: {{leave | async}}</label>
             <input
               type="text"
               class="form-control"
@@ -105,118 +105,133 @@
                 aria-expanded="false"
                 aria-controls="collapseExample"
                 class="text-body font-weight-bold"
-                >+
+                ><i class="fas fa-caret-down"></i>
               </a>
-              6. Enter your monthly Electricity use here (kWh):</label
+            6. Enter your monthly Electricity use here (kWh):</label
             >
-            <div class="collapse mb-2" id="monthly-electricity">
+            <div class="collapse mb-2" formGroupName="yearlyElectricity" 
+            (keyup)="sum('yearlyElectricity')"
+            id="monthly-electricity" >
+
               <div class="row ">
-                <div class="col-1 pr-0">
+                <div class="col-2 pr-0">
                   <input
                     type="number"
                     class="form-control"
                     id="occupants"
                     aria-describedby="emailHelp"
                     placeholder="Jan"
+                    formControlName="jan"
                   />
                 </div>
-                <div class="col-1 pr-0">
+                <div class="col-2 pr-0">
                   <input
                     type="number"
                     class="form-control"
                     id="occupants"
                     aria-describedby="emailHelp"
                     placeholder="Feb"
+                    formControlName="feb"
                   />
                 </div>
-                <div class="col-1 pr-0">
+                <div class="col-2 pr-0">
                   <input
                     type="number"
                     class="form-control"
                     id="occupants"
                     aria-describedby="emailHelp"
                     placeholder="Mar"
+                    formControlName="mar"
                   />
                 </div>
-                <div class="col-1 pr-0">
+                <div class="col-2 pr-0">
                   <input
                     type="number"
                     class="form-control"
                     id="occupants"
                     aria-describedby="emailHelp"
                     placeholder="Apr"
+                    formControlName="apr"
                   />
                 </div>
-                <div class="col-1 pr-0">
+                <div class="col-2 pr-0">
                   <input
                     type="number"
                     class="form-control"
                     id="occupants"
                     aria-describedby="emailHelp"
                     placeholder="May"
+                    formControlName="may"
                   />
                 </div>
-                <div class="col-1 pr-0">
+                <div class="col-2 pr-0">
                   <input
                     type="number"
                     class="form-control"
                     id="occupants"
                     aria-describedby="emailHelp"
                     placeholder="Jun"
+                    formControlName="jun"
                   />
                 </div>
-                <div class="col-1 pr-0">
+                <div class="col-2 pr-0">
                   <input
                     type="number"
                     class="form-control"
                     id="occupants"
                     aria-describedby="emailHelp"
                     placeholder="Jul"
+                    formControlName="jul"
                   />
                 </div>
-                <div class="col-1 pr-0">
+                <div class="col-2 pr-0">
                   <input
                     type="number"
                     class="form-control"
                     id="occupants"
                     aria-describedby="emailHelp"
                     placeholder="Aug"
+                    formControlName="aug"
                   />
                 </div>
-                <div class="col-1 pr-0">
+                <div class="col-2 pr-0">
                   <input
                     type="number"
                     class="form-control"
                     id="occupants"
                     aria-describedby="emailHelp"
                     placeholder="Sep"
+                    formControlName="sep"
                   />
                 </div>
-                <div class="col-1 pr-0">
+                <div class="col-2 pr-0">
                   <input
                     type="number"
                     class="form-control"
                     id="occupants"
                     aria-describedby="emailHelp"
                     placeholder="Oct"
+                    formControlName="oct"
                   />
                 </div>
-                <div class="col-1 pr-0">
+                <div class="col-2 pr-0">
                   <input
                     type="number"
                     class="form-control"
                     id="occupants"
                     aria-describedby="emailHelp"
                     placeholder="Nov"
+                    formControlName="nov"
                   />
                 </div>
-                <div class="col-1 pr-0 pl-1">
+                <div class="col-2 pr-0">
                   <input
                     type="number"
                     class="form-control"
                     id="occupants"
                     aria-describedby="emailHelp"
                     placeholder="Dec"
+                    formControlName="dec"
                   />
                 </div>
               </div>
@@ -228,7 +243,7 @@
                   class="form-control"
                   name="yearlyElectricity"
                   id="yearlyElectricity"
-                  formControlName="yearlyElectricity"
+                  formControlName="totalYearlyElectricity"
                   placeholder="0"
                 />
                 <small id="passwordHelpInline" class="ml-2">
@@ -247,118 +262,130 @@
                 aria-expanded="false"
                 aria-controls="collapseExample"
                 class="text-body font-weight-bold"
-                >+
+                ><i class="fas fa-caret-down"></i>
               </a>
               7. Enter your monthly Gas/Propane use here (m&#179;):</label
             >
-            <div class="collapse mb-2" id="monthly-gas">
+            <div class="collapse mb-2" id="monthly-gas" formGroupName="yearlyGas" (keyup)="sum('yearlyGas')" >
               <div class="row ">
-                <div class="col-1 pr-0">
+                <div class="col-2 pr-0">
                   <input
                     type="number"
                     class="form-control"
                     id="occupants"
                     aria-describedby="emailHelp"
                     placeholder="Jan"
+                    formControlName="jan"
                   />
                 </div>
-                <div class="col-1 pr-0">
+                <div class="col-2 pr-0">
                   <input
                     type="number"
                     class="form-control"
                     id="occupants"
                     aria-describedby="emailHelp"
                     placeholder="Feb"
+                    formControlName="feb"
                   />
                 </div>
-                <div class="col-1 pr-0">
+                <div class="col-2 pr-0">
                   <input
                     type="number"
                     class="form-control"
                     id="occupants"
                     aria-describedby="emailHelp"
                     placeholder="Mar"
+                    formControlName="mar"
                   />
                 </div>
-                <div class="col-1 pr-0">
+                <div class="col-2 pr-0">
                   <input
                     type="number"
                     class="form-control"
                     id="occupants"
                     aria-describedby="emailHelp"
                     placeholder="Apr"
+                    formControlName="apr"
                   />
                 </div>
-                <div class="col-1 pr-0">
+                <div class="col-2 pr-0">
                   <input
                     type="number"
                     class="form-control"
                     id="occupants"
                     aria-describedby="emailHelp"
                     placeholder="May"
+                    formControlName="may"
                   />
                 </div>
-                <div class="col-1 pr-0">
+                <div class="col-2 pr-0">
                   <input
                     type="number"
                     class="form-control"
                     id="occupants"
                     aria-describedby="emailHelp"
                     placeholder="Jun"
+                    formControlName="jun"
                   />
                 </div>
-                <div class="col-1 pr-0">
+                <div class="col-2 pr-0">
                   <input
                     type="number"
                     class="form-control"
                     id="occupants"
                     aria-describedby="emailHelp"
                     placeholder="Jul"
+                    formControlName="jul"
                   />
                 </div>
-                <div class="col-1 pr-0">
+                <div class="col-2 pr-0">
                   <input
                     type="number"
                     class="form-control"
                     id="occupants"
                     aria-describedby="emailHelp"
                     placeholder="Aug"
+                    formControlName="aug"
                   />
                 </div>
-                <div class="col-1 pr-0">
+                <div class="col-2 pr-0">
                   <input
                     type="number"
                     class="form-control"
                     id="occupants"
                     aria-describedby="emailHelp"
                     placeholder="Sep"
+                    formControlName="sep"
                   />
                 </div>
-                <div class="col-1 pr-0">
+                <div class="col-2 pr-0">
                   <input
                     type="number"
                     class="form-control"
                     id="occupants"
                     aria-describedby="emailHelp"
                     placeholder="Oct"
+                    formControlName="oct"
                   />
                 </div>
-                <div class="col-1 pr-0">
+                <div class="col-2 pr-0">
                   <input
                     type="number"
                     class="form-control"
                     id="occupants"
                     aria-describedby="emailHelp"
                     placeholder="Nov"
+                    formControlName="nov"
                   />
                 </div>
-                <div class="col-1 pr-0 pl-1">
+                <div class="col-2 pr-0">
                   <input
                     type="number"
                     class="form-control"
                     id="occupants"
                     aria-describedby="emailHelp"
                     placeholder="Dec"
+                    formControlName="dec"
                   />
                 </div>
               </div>
@@ -412,117 +439,129 @@
                 aria-expanded="false"
                 aria-controls="collapseExample"
                 class="text-body font-weight-bold"
-                >+ </a
+                ><i class="fas fa-caret-down"></i> </a
               >8. Enter any Heating Oil Used here (litres):</label
             >
-            <div class="collapse mb-2" id="monthly-oil">
+            <div class="collapse mb-2" id="monthly-oil" formGroupName="yearlyOil" (keyup)="sum('yearlyOil')">
               <div class="row ">
-                <div class="col-1 pr-0">
+                <div class="col-2 pr-0">
                   <input
                     type="number"
                     class="form-control"
                     id="occupants"
                     aria-describedby="emailHelp"
                     placeholder="Jan"
+                    formControlName="jan"
                   />
                 </div>
-                <div class="col-1 pr-0">
+                <div class="col-2 pr-0">
                   <input
                     type="number"
                     class="form-control"
                     id="occupants"
                     aria-describedby="emailHelp"
                     placeholder="Feb"
+                    formControlName="feb"
                   />
                 </div>
-                <div class="col-1 pr-0">
+                <div class="col-2 pr-0">
                   <input
                     type="number"
                     class="form-control"
                     id="occupants"
                     aria-describedby="emailHelp"
                     placeholder="Mar"
+                    formControlName="mar"
                   />
                 </div>
-                <div class="col-1 pr-0">
+                <div class="col-2 pr-0">
                   <input
                     type="number"
                     class="form-control"
                     id="occupants"
                     aria-describedby="emailHelp"
                     placeholder="Apr"
+                    formControlName="apr"
                   />
                 </div>
-                <div class="col-1 pr-0">
+                <div class="col-2 pr-0">
                   <input
                     type="number"
                     class="form-control"
                     id="occupants"
                     aria-describedby="emailHelp"
                     placeholder="May"
+                    formControlName="may"
                   />
                 </div>
-                <div class="col-1 pr-0">
+                <div class="col-2 pr-0">
                   <input
                     type="number"
                     class="form-control"
                     id="occupants"
                     aria-describedby="emailHelp"
                     placeholder="Jun"
+                    formControlName="jun"
                   />
                 </div>
-                <div class="col-1 pr-0">
+                <div class="col-2 pr-0">
                   <input
                     type="number"
                     class="form-control"
                     id="occupants"
                     aria-describedby="emailHelp"
                     placeholder="Jul"
+                    formControlName="jul"
                   />
                 </div>
-                <div class="col-1 pr-0">
+                <div class="col-2 pr-0">
                   <input
                     type="number"
                     class="form-control"
                     id="occupants"
                     aria-describedby="emailHelp"
                     placeholder="Aug"
+                    formControlName="aug"
                   />
                 </div>
-                <div class="col-1 pr-0">
+                <div class="col-2 pr-0">
                   <input
                     type="number"
                     class="form-control"
                     id="occupants"
                     aria-describedby="emailHelp"
                     placeholder="Sep"
+                    formControlName="sep"
                   />
                 </div>
-                <div class="col-1 pr-0">
+                <div class="col-2 pr-0">
                   <input
                     type="number"
                     class="form-control"
                     id="occupants"
                     aria-describedby="emailHelp"
                     placeholder="Oct"
+                    formControlName="oct"
                   />
                 </div>
-                <div class="col-1 pr-0">
+                <div class="col-2 pr-0">
                   <input
                     type="number"
                     class="form-control"
                     id="occupants"
                     aria-describedby="emailHelp"
                     placeholder="Nov"
+                    formControlName="nov"
                   />
                 </div>
-                <div class="col-1 pr-0 pl-1">
+                <div class="col-2 pr-0">
                   <input
                     type="number"
                     class="form-control"
                     id="occupants"
                     aria-describedby="emailHelp"
                     placeholder="Dec"
+                    formControlName="dec"
                   />
                 </div>
               </div>
@@ -571,122 +610,134 @@
             <label for="area"
               ><a
                 data-toggle="collapse"
-                href="#monthly-wood"
+                href="#monthly-biofuel"
                 role="button"
                 aria-expanded="false"
                 aria-controls="collapseExample"
                 class="text-body font-weight-bold"
-                >+ </a
+                ><i class="fas fa-caret-down"></i> </a
               >9. Enter any Biofuel/Wood Used here (m&#179;):</label
             >
-            <div class="collapse mb-2" id="monthly-biofuel">
+            <div class="collapse mb-2" id="monthly-biofuel" formGroupName="yearlyWood" (keyup)="sum('yearlyWood')">
               <div class="row ">
-                <div class="col-1 pr-0">
+                <div class="col-2 pr-0">
                   <input
                     type="number"
                     class="form-control"
                     id="occupants"
                     aria-describedby="emailHelp"
                     placeholder="Jan"
+                    formControlName="jan"
                   />
                 </div>
-                <div class="col-1 pr-0">
+                <div class="col-2 pr-0">
                   <input
                     type="number"
                     class="form-control"
                     id="occupants"
                     aria-describedby="emailHelp"
                     placeholder="Feb"
+                    formControlName="feb"
                   />
                 </div>
-                <div class="col-1 pr-0">
+                <div class="col-2 pr-0">
                   <input
                     type="number"
                     class="form-control"
                     id="occupants"
                     aria-describedby="emailHelp"
                     placeholder="Mar"
+                    formControlName="mar"
                   />
                 </div>
-                <div class="col-1 pr-0">
+                <div class="col-2 pr-0">
                   <input
                     type="number"
                     class="form-control"
                     id="occupants"
                     aria-describedby="emailHelp"
                     placeholder="Apr"
+                    formControlName="apr"
                   />
                 </div>
-                <div class="col-1 pr-0">
+                <div class="col-2 pr-0">
                   <input
                     type="number"
                     class="form-control"
                     id="occupants"
                     aria-describedby="emailHelp"
                     placeholder="May"
+                    formControlName="may"
                   />
                 </div>
-                <div class="col-1 pr-0">
+                <div class="col-2 pr-0">
                   <input
                     type="number"
                     class="form-control"
                     id="occupants"
                     aria-describedby="emailHelp"
                     placeholder="Jun"
+                    formControlName="jun"
                   />
                 </div>
-                <div class="col-1 pr-0">
+                <div class="col-2 pr-0">
                   <input
                     type="number"
                     class="form-control"
                     id="occupants"
                     aria-describedby="emailHelp"
                     placeholder="Jul"
+                    formControlName="jul"
                   />
                 </div>
-                <div class="col-1 pr-0">
+                <div class="col-2 pr-0">
                   <input
                     type="number"
                     class="form-control"
                     id="occupants"
                     aria-describedby="emailHelp"
                     placeholder="Aug"
+                    formControlName="aug"
                   />
                 </div>
-                <div class="col-1 pr-0">
+                <div class="col-2 pr-0">
                   <input
                     type="number"
                     class="form-control"
                     id="occupants"
                     aria-describedby="emailHelp"
                     placeholder="Sep"
+                    formControlName="sep"
                   />
                 </div>
-                <div class="col-1 pr-0">
+                <div class="col-2 pr-0">
                   <input
                     type="number"
                     class="form-control"
                     id="occupants"
                     aria-describedby="emailHelp"
                     placeholder="Oct"
+                    formControlName="oct"
                   />
                 </div>
-                <div class="col-1 pr-0">
+                <div class="col-2 pr-0">
                   <input
                     type="number"
                     class="form-control"
                     id="occupants"
                     aria-describedby="emailHelp"
                     placeholder="Nov"
+                    formControlName="nov"
                   />
                 </div>
-                <div class="col-1 pr-0 pl-1">
+                <div class="col-2 pr-0">
                   <input
                     type="number"
                     class="form-control"
                     id="occupants"
                     aria-describedby="emailHelp"
                     placeholder="Dec"
+                    formControlName="dec"
                   />
                 </div>
               </div>
@@ -841,5 +892,5 @@
         </form>
       </div>
     </div>
-  </div>
-</div>
+  <!-- </div> -->
+<!-- </div> -->

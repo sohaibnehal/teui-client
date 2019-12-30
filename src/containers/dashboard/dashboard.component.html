@@ -1,7 +1,11 @@
-<div>
+<div id="parentDiv" style="overflow: hidden" >
   <div class="container text-center mt-5 mb-5">
-    <h1 class="mb-3">THE TEUI PROJECT</h1>
-    <p class="text-left mb-3">
+    <h2 class="mb-3 heading-1">
+      THE T<span class="opacity-60">E</span><span class="opacity-50">U</span>
+      <span class="opacity-30">I</span>
+      PROJECT
+    </h2>
+    <p class="text-left mb-3 paragraph-1">
       Canada committed to meet the Paris climate targets, but most individuals
       (even architects) are in the dark about the performance of their own
       house. As the TEUI rating is just starting to gain traction in the AEC
@@ -20,11 +24,19 @@
       this site to begin May 15th, 2019.
     </p>
   </div>
-  <div class="row mb-5">
-    <div class="col-2"></div>
-    <div class="col-8">
+  <div class="drawer-button">
+    <button
+      (click)="openModal()"
+      type="button"
+      class="btn btn-primary text-right no-border"
+    >
+      <i class="fas fa-list"></i>
+    </button>
+  </div>
+  <div class="row mb-5 justify-content-center">
+    <div class="col-12">
       <app-results [result]="result" (openModal)="openModal()"></app-results>
     </div>
-    <div class="col-2"></div>
   </div>
+  
 </div>

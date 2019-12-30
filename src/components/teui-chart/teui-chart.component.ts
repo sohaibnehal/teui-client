@@ -35,7 +35,14 @@ export class TEUIChartComponent implements OnInit, OnChanges {
     }
   ];
   public options: any = {
-    tooltips: { enabled: false }
+    defaultFontColor:'#FFF',  
+    responsive:true,
+    legend: {
+      position: 'right',
+      labels: {
+        fontSize:10
+      }
+    }
   };
   showOuterChart = false;
 
@@ -52,7 +59,6 @@ export class TEUIChartComponent implements OnInit, OnChanges {
   ngOnInit() {}
 
   drawOuterDonutChart(renewableEnergy) {
-    console.log(renewableEnergy);
     let sum = 0;
     for (const i in renewableEnergy) {
       if (renewableEnergy.hasOwnProperty(i)) {
@@ -104,6 +110,10 @@ export class TEUIChartComponent implements OnInit, OnChanges {
   }
 
   drawInnerDonutChart(energy) {
+    if(this.innerDoughnutChartData){
+      this.innerDoughnutChartData =[];
+      this.innerDoughnutChartLabels=[];
+    }
     let sum = 0;
     for (const i in energy) {
       if (energy[i]) {

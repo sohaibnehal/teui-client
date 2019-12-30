@@ -20,12 +20,13 @@ import * as fromContainers from '../containers';
 
 // services
 import * as fromServices from '../services';
+import { HouseChartModule } from 'src/components/house-chart/house-chart.module';
 
 @NgModule({
   declarations: [
     AppComponent,
     ...fromContainers.containers,
-    ...fromComponents.components
+    ...fromComponents.components,
   ],
   imports: [
     BrowserModule,
@@ -33,7 +34,8 @@ import * as fromServices from '../services';
     ReactiveFormsModule,
     FormsModule,
     NgbModule,
-    ChartsModule
+    ChartsModule,
+    HouseChartModule
   ],
   providers: [],
   bootstrap: [AppComponent],
